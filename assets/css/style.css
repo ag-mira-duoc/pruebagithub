@@ -1,0 +1,121 @@
+#page {
+    display: grid;
+    width: 100%;
+    min-height: 100vh;
+    grid-template-areas:
+      "head head"
+      "nav  main"
+      "nav  foot";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 250px 1fr;
+  }
+  
+  #page > header {
+    grid-area: head;
+    background-color: #2E5090;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #page > nav {
+    grid-area: nav;
+    background-color: white;
+    color: black;
+    padding: 20px;
+  }
+  
+  #page > main {
+    grid-area: main;
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  #page > footer {
+    grid-area: foot;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Estilos para los productos */
+  .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+  }
+  
+  .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+  }
+  
+  .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .product-img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 15px;
+  }
+  
+  .product-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+  }
+  
+  .product-price {
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 15px;
+  }
+  
+  .category-item {
+      padding: 3px 0;
+      cursor: pointer;
+  }
+  
+  .category-item:hover {
+      color: #007bff;
+  }
+  
+  /* Color gris de los paréntesis en items de categorías */
+  .gray-text {
+    color: gray;
+}
+
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+      #page {
+          grid-template-areas:
+              "head"
+              "nav"
+              "main"
+              "foot";
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto 1fr auto;
+      }
+      
+      #page > nav {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          justify-content: center;
+      }
+      
+      .category-item {
+          border-bottom: none;
+          padding: 8px 15px;
+          background: #495057;
+          border-radius: 20px;
+      }
+  }
